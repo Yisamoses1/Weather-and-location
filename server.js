@@ -31,7 +31,7 @@ app.get("/api/hello", async (req, res) => {
     // Get temperature information
     const temperature = weatherResponse.data.main.temp;
 
-    // Construct greetings message using the format given
+    // Construct greetings message using the given format
     const greetings = `Hello, ${visitorName}!, the temperature is ${temperature}°C in ${city}, ${country}.`;
 
     const responseData = {
@@ -40,7 +40,7 @@ app.get("/api/hello", async (req, res) => {
       greetings: greetings,
     };
 
-    // Respond with the constructed data
+
     res.json(responseData);
   } catch (error) {
     res.status(500).json({ error: "Failed to fetch data" });
